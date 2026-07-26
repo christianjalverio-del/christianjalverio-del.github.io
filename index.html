@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christian Alverio — Cybersecurity Portfolio</title>
+<style>
+  :root {
+    --bg: #0b1220;
+    --bg-alt: #111a2c;
+    --card: #16213a;
+    --border: #24314d;
+    --text: #e6ebf5;
+    --muted: #93a1bd;
+    --accent: #4fd1c5;
+    --accent-2: #6ea8fe;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  a { color: var(--accent-2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  header.nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11,18,32,0.9); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  header.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  header.nav .brand { font-weight: 700; letter-spacing: 0.5px; }
+  header.nav nav a { margin-left: 20px; color: var(--muted); font-size: 14px; }
+  header.nav nav a:hover { color: var(--text); text-decoration: none; }
+
+  .hero { padding: 80px 0 60px; text-align: center; }
+  .hero h1 { font-size: 40px; margin: 0 0 6px; }
+  .hero .role { color: var(--accent); font-size: 18px; margin-bottom: 18px; }
+  .hero p.tagline { color: var(--muted); max-width: 640px; margin: 0 auto 26px; }
+  .hero .links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 10px 18px; border-radius: 8px;
+    border: 1px solid var(--border); font-size: 14px; color: var(--text);
+  }
+  .btn:hover { border-color: var(--accent); text-decoration: none; }
+  .btn.primary { background: var(--accent); color: #06231f; border-color: var(--accent); font-weight: 600; }
+  .btn.primary:hover { opacity: 0.9; }
+
+  section { padding: 50px 0; border-top: 1px solid var(--border); }
+  section h2 {
+    font-size: 22px; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--accent); margin-bottom: 20px;
+  }
+  section h3 { font-size: 18px; margin: 28px 0 8px; color: var(--text); }
+  section p { color: #cbd5e8; }
+  section p.lead { color: var(--muted); }
+
+  .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: 16px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px;
+  }
+  .card h4 { margin: 0 0 6px; font-size: 15px; }
+  .card .meta { color: var(--muted); font-size: 13px; }
+
+  ul.skills { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 10px 24px; }
+  ul.skills li { color: #cbd5e8; padding-left: 18px; position: relative; }
+  ul.skills li::before { content: "▹"; color: var(--accent); position: absolute; left: 0; }
+
+  ul.plain { padding-left: 20px; color: #cbd5e8; }
+  ul.plain li { margin-bottom: 6px; }
+
+  .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 10px; margin: 16px 0 8px; }
+  .photo-grid figure { margin: 0; cursor: pointer; }
+  .photo-grid img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); display: block; }
+  .photo-grid figcaption { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+  .shot { margin: 18px 0; cursor: pointer; }
+  .shot img { max-width: 100%; border-radius: 8px; border: 1px solid var(--border); display: block; }
+  .shot figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; font-style: italic; }
+
+  #lightbox {
+    display: none; position: fixed; inset: 0; background: rgba(5,8,15,0.92);
+    z-index: 100; align-items: center; justify-content: center; padding: 30px; cursor: zoom-out;
+  }
+  #lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 6px; }
+
+  footer { padding: 40px 0 60px; text-align: center; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <div class="brand">Christian Alverio</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#certs">Certifications</a>
+      <a href="#skills">Skills</a>
+      <a href="#project">Project</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Christian Alverio</h1>
+    <div class="role">Cybersecurity Student — Aspiring SOC Analyst</div>
+    <p class="tagline">Junior at Florida International University studying Cybersecurity, CompTIA A+ / Network+ / Security+ certified, and Google Cybersecurity Professional Certificate holder. I design, build, and secure real infrastructure — not just lab exercises.</p>
+    <div class="links">
+      <a class="btn primary" href="resume.pdf">Download Résumé</a>
+      <a class="btn" href="portfolio.docx">Full Project Portfolio (.docx)</a>
+      <a class="btn" href="mailto:christianjalverio@gmail.com">Email Me</a>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>I'm a junior Cybersecurity major at Florida International University (expected graduation 2027), pursuing a career as a SOC analyst. To build real, hands-on experience beyond coursework, I designed and built a complete home network security lab from the ground up — a segmented network with a hardened firewall, self-hosted VPN, intrusion detection, PKI/certificate management, and a virtualized services host — treating every configuration decision the way I would in a production environment.</p>
+  </div>
+</section>
+
+<section id="certs">
+  <div class="wrap">
+    <h2>Certifications</h2>
+    <div class="grid-cards">
+      <div class="card"><h4>CompTIA Security+</h4><div class="meta">Security fundamentals, threats, risk management</div></div>
+      <div class="card"><h4>CompTIA Network+</h4><div class="meta">Networking infrastructure and protocols</div></div>
+      <div class="card"><h4>CompTIA A+</h4><div class="meta">Hardware, OS, troubleshooting fundamentals</div></div>
+      <div class="card"><h4>Google Cybersecurity Professional Certificate</h4><div class="meta">SOC tools, SIEM, incident response fundamentals</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>Firewall administration & rule design (least privilege, default-deny)</li>
+      <li>VPN deployment & access-tiering (WireGuard)</li>
+      <li>IDS/IPS deployment, rule tuning, alert triage (Snort)</li>
+      <li>PKI / certificate lifecycle management</li>
+      <li>Network storage & access control (SMB/NFS, TrueNAS)</li>
+      <li>Virtualization & containers (Proxmox, Docker, LXC)</li>
+      <li>Monitoring & automated alerting (Uptime Kuma, Telegram)</li>
+      <li>Systematic troubleshooting & root-cause analysis</li>
+    </ul>
+  </div>
+</section>
+
+<section id="project">
+  <div class="wrap">
+    <h2>Featured Project — Home Network Security Lab</h2>
+    <p class="lead">A fully self-built home network and server infrastructure, built incrementally over several months, covering firewall administration, VPN-based remote access, intrusion detection, PKI, virtualization, and self-hosted application deployment.</p>
+
+    <h3>Physical Build</h3>
+    <p>The infrastructure runs on a compact wall-mounted 10-inch rack, wired from individual components, including custom 3D-printed mounting brackets designed to fit the rack's non-standard dimensions.</p>
+    <div class="photo-grid" id="photo-build"></div>
+
+    <h3>Network Security & Firewall (pfSense)</h3>
+    <p>Configured and administer a pfSense firewall as the network's perimeter defense, with rules following a least-privilege, default-deny model — every rule scoped to a specific source, destination, and port. Set up DHCP (Kea), DNS, NTP, and system logging, and configured WAN-facing settings deliberately, including bogon vs. private-network filtering trade-offs.</p>
+    <figure class="shot"><img src="images/shot_221733.jpg" alt="pfSense dashboard"><figcaption>pfSense dashboard showing system status and gateway health.</figcaption></figure>
+    <figure class="shot"><img src="images/shot_221801.jpg" alt="pfSense firewall rules"><figcaption>pfSense LAN firewall rules — least-privilege, default-deny.</figcaption></figure>
+    <figure class="shot"><img src="images/shot_130757.jpg" alt="pfSense SSH"><figcaption>SSH access into pfSense for command-line administration.</figcaption></figure>
+
+    <h3>VPN Infrastructure (WireGuard)</h3>
+    <p>Replaced a third-party mesh VPN with a fully self-hosted WireGuard deployment, including port forwarding through a double-NAT ISP gateway. Designed a tiered access model using firewall aliases and diagnosed a real-world NAT hairpin/reflection issue tracing back to a WAN bogon-filtering setting.</p>
+    <figure class="shot"><img src="images/shot_222602.jpg" alt="WireGuard settings"><figcaption>WireGuard VPN configuration on pfSense.</figcaption></figure>
+    <figure class="shot"><img src="images/shot_222515.jpg" alt="WireGuard peers"><figcaption>WireGuard peer configuration.</figcaption></figure>
+
+    <h3>Intrusion Detection & Prevention (Snort)</h3>
+    <p>Deployed Snort as an active IDS/IPS on the WAN interface in inline blocking mode. Curated rule categories against the hardware's processing budget, corrected a self-lockout risk in the block-target configuration, and built a cron-scheduled script that pushes new Snort alerts to a Telegram bot in real time.</p>
+
+    <h3>Storage, Backup & Access Control (TrueNAS)</h3>
+    <p>Administer a TrueNAS SCALE server with SMB/NFS shares under scoped access restrictions, UPS monitoring (NUT), and a self-signed internal CA issuing TLS certificates for internal services — including diagnosing a certificate rejection caused by exceeding the modern max validity period. Scheduled automated backups from the hypervisor over NFS.</p>
+    <figure class="shot"><img src="images/shot_222717.jpg" alt="TrueNAS dashboard"><figcaption>TrueNAS storage dashboard.</figcaption></figure>
+    <figure class="shot"><img src="images/shot_222917.jpg" alt="TrueNAS shares"><figcaption>TrueNAS SMB/NFS share configuration with access controls.</figcaption></figure>
+    <figure class="shot"><img src="images/shot_222822.jpg" alt="TrueNAS apps"><figcaption>Installed applications on TrueNAS.</figcaption></figure>
+
+    <h3>Virtualization & Self-Hosted Services (Proxmox)</h3>
+    <p>Built and manage a Proxmox VE host running Docker inside an LXC container (managed with Portainer), hosting Vaultwarden behind a Caddy TLS reverse proxy, Uptime Kuma for monitoring with Telegram alerting, and a resource-isolated application server locked down to a single inbound rule. Resolved Docker directory-permission, NAT, and container sizing issues along the way.</p>
+    <figure class="shot"><img src="images/shot_221712.jpg" alt="Portainer"><figcaption>Portainer container list for Docker services running on Proxmox.</figcaption></figure>
+    <figure class="shot"><img src="images/shot_230550.jpg" alt="Proxmox graphs"><figcaption>Proxmox host resource utilization (CPU/memory).</figcaption></figure>
+    <figure class="shot"><img src="images/shot_224552.jpg" alt="Certificate dialog"><figcaption>Self-signed CA certificate installed and trusted on a client device.</figcaption></figure>
+    <figure class="shot"><img src="images/shot_224607.jpg" alt="Vaultwarden"><figcaption>Vaultwarden self-hosted password manager.</figcaption></figure>
+    <figure class="shot"><img src="images/shot_223044.jpg" alt="Uptime Kuma"><figcaption>Uptime Kuma status page — all monitored services operational.</figcaption></figure>
+    <figure class="shot"><img src="images/shot_225708.jpg" alt="Port forwarding"><figcaption>Port forwarding for externally accessible services (Minecraft server).</figcaption></figure>
+
+    <h3>Selected Troubleshooting</h3>
+    <ul class="plain">
+      <li>Traced a VPN client showing zero received traffic to a WAN interface setting silently dropping private-sourced packets, rather than assuming a misconfigured tunnel.</li>
+      <li>Diagnosed a browser certificate rejection (<code>NET::ERR_CERT_VALIDITY_TOO_LONG</code>) back to a self-signed certificate exceeding the modern 398-day maximum validity policy, not a trust-chain problem.</li>
+      <li>Isolated a file-share permission failure to a parent directory's restrictive Linux permissions several levels above the actual shared folder, resolving it with a scoped bind mount.</li>
+      <li>Identified a severe server performance issue as CPU/I-O contention between a background data pre-generation task and live usage, resolved with an automated pause/resume mechanism.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Coral Springs, FL &nbsp;|&nbsp; <a href="mailto:christianjalverio@gmail.com">christianjalverio@gmail.com</a> &nbsp;|&nbsp; (954) 589-3159</p>
+  </div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> Christian Alverio
+</footer>
+
+<div id="lightbox"><img id="lightbox-img" src=""></div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const buildPhotos = [
+    ["IMG_3484.jpg","Front view of the completed rack — pfSense, switch, Proxmox host, and UPS."],
+    ["IMG_3035.jpg","The rack, fully wired and closed up."],
+    ["IMG_3482.jpg","Rack mounted on a floating shelf — space-constrained deployment."],
+    ["IMG_3485.jpg","Structured patch cabling from the switch."],
+    ["IMG_3488.jpg","Cable management inside the rack."],
+    ["IMG_3487.jpg","Rack interior, cables dressed and routed."],
+    ["IMG_3506.jpg","Rear cable routing."],
+    ["IMG_3511.jpg","Rear cable routing, close-up."],
+    ["IMG_3515.jpg","Verifying cable runs with a network cable tester."],
+    ["IMG_3494.jpg","Terminating and testing an Ethernet cable."],
+    ["IMG_3491.jpg","Proxmox host opened up for a hardware upgrade."],
+    ["IMG_3492.jpg","Adding a PCIe expansion card to the Proxmox host."],
+    ["IMG_3480.jpg","Mini PC and mesh networking gear."],
+    ["IMG_3483.jpg","Mini PC and network devices, powered up."],
+    ["IMG_3501.jpg","Internal drive bay and SSD storage."],
+    ["IMG_3502.jpg","NAS storage drive before installation in TrueNAS."],
+    ["IMG_3504.jpg","Rack-mounted PDU for organized power distribution."],
+    ["IMG_3513.jpg","UPS providing battery backup, monitored via NUT."],
+    ["IMG_3037.jpg","3D printing custom mounting brackets for the rack."],
+    ["IMG_3499.jpg","Custom 3D-printed mounting bracket, test-fit with the mini PC."],
+    ["IMG_3497.jpg","3D-printed bracket mounted in the rack."],
+  ];
+
+  const grid = document.getElementById('photo-build');
+  buildPhotos.forEach(([file, cap]) => {
+    const fig = document.createElement('figure');
+    fig.innerHTML = `<img src="images/${file}" alt="${cap}" loading="lazy"><figcaption>${cap}</figcaption>`;
+    fig.querySelector('img').addEventListener('click', () => openLightbox(`images/${file}`));
+    grid.appendChild(fig);
+  });
+
+  document.querySelectorAll('.shot img').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.getAttribute('src')));
+  });
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.style.display = 'flex';
+  }
+  lightbox.addEventListener('click', () => { lightbox.style.display = 'none'; lightboxImg.src = ''; });
+</script>
+
+</body>
+</html>
